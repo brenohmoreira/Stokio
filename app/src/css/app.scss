@@ -1,28 +1,6 @@
 // Estilos globais do app entram aqui.
-
-// Fonte Poppins em todo o front
-$typography-font-family: 'Poppins', -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-body,
-.q-app,
-input,
-button,
-textarea,
-select,
-.q-field,
-.material-icons {
-  font-family: $typography-font-family;
-}
-
-* {
-  font-family: 'Poppins', -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-// Preserva ícones do Quasar (não devem herdar Poppins)
-.material-icons,
-.material-icons-outlined,
-.material-icons-round,
-.material-icons-sharp,
-.notranslate.material-icons {
-  font-family: 'Material Icons' !important;
-}
+//
+// A fonte padrão (Poppins) é definida via $typography-font-family em
+// quasar.variables.scss. NÃO use o seletor universal `*` para trocar a fonte:
+// ele atinge também os <i> dos ícones (.material-icons, .mdi, ...) e faz o
+// nome do ícone aparecer por extenso (ex.: "inbox").

@@ -1,4 +1,9 @@
 // Variáveis de tema do Quasar (Sass). Ajuste as cores da sua marca aqui.
+
+// Fonte padrão de textos do app. Definir aqui (e NÃO com `*` no CSS) faz o
+// Quasar aplicar a fonte apenas na tipografia, sem afetar os <i> dos ícones.
+$typography-font-family: 'Poppins', -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 $primary: #1976d2;
 $secondary: #26a69a;
 $accent: #9c27b0;
