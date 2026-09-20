@@ -3,33 +3,33 @@
     <q-header class="bg-white text-grey-8 bordered">
       <q-toolbar class="q-pl-none">
         <div class="brand row items-center no-wrap">
-          <img src="/icon.svg" alt="Stokio" style="width: 36px; height: 36px"/>
+          <img src="/icon.svg" alt="Stokio" style="width: 30px; height: 30px"/>
 
           <div class="column items-start justify-center">
             <span class="text-caption text-bold">Stokio</span>
-            <span class="text-caption text-grey-5">Gerenciamento de Inventário</span>
+            <span class="text-tiny text-grey-7">Gerenciamento de Inventário</span>
           </div>
         </div>
-        <q-btn class="q-ml-sm" aria-label="Toggle drawer" flat @click="drawerAberto = !drawerAberto" round dense icon="menu"/>
+        <q-btn class="q-ml-sm" aria-label="Toggle drawer" flat @click="drawerOpened = !drawerOpened" round dense icon="menu"/>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="drawerAberto" show-if-above :width="275" :breakpoint="500" bordered>
+    <q-drawer v-model="drawerOpened" show-if-above :width="275" :breakpoint="500" bordered>
       <q-scroll-area class="fit">
         <q-list class="q-pa-md">
           <span class="text-bold uppercase text-caption text-grey-6 q-mb-sm block"> INVENTÁRIO </span>
-          <template v-for="(item, index) in listaDrawer" :key="index">
+          <template v-for="(item, index) in drawerList" :key="index">
             <div
               class="menu-item full-width q-px-md q-py-sm row items-center justify-between rounded-borders"
-              :class="{ 'menu-item--active': $route.path === item.para }"
+              :class="{ 'menu-item--active': $route.path === item.to }"
               v-ripple
-              @click="$router.push(item.para)"
+              @click="$router.push(item.to)"
             >
                 <div class="row items-center" style="gap: 10px;">
-                  <q-icon :name="item.icone" class="text-grey-3 rounded-borders bg-grey-6 q-pa-sm" size="20px"/>
+                  <q-icon :name="item.icon" class="text-grey-3 rounded-borders bg-primary q-pa-sm" size="15px"/>
                   <div class="column">
-                    <span class="text-caption text-bold"> {{ item.rotulo }}</span>
-                    <span class="text-caption text-grey-8"> {{ item.descricao }}</span>
+                    <span class="text-caption text-grey-8 text-bold"> {{ item.label }}</span>
+                    <span class="text-tiny text-grey-7"> {{ item.description }}</span>
                   </div>
                 </div>
                 <q-icon name="chevron_right" size="18px" class="text-grey-7"/>
@@ -47,11 +47,11 @@
 
 <script setup lang="ts">
   import { ref } from 'vue';
-  import { ItemListaDrawer } from './main-layout.types';
+  import { DrawerItemList } from './main-layout.types';
   import { LIST_DRAWER } from './main-layout.constants';
 
-  const drawerAberto = ref<boolean>(false);
-  const listaDrawer: ItemListaDrawer[] = LIST_DRAWER
+  const drawerOpened = ref<boolean>(false);
+  const drawerList: DrawerItemList[] = LIST_DRAWER
 </script>
 
 <style scoped>

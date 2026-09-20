@@ -1,6 +1,29 @@
-// Estilos globais do app entram aqui.
-//
-// A fonte padrão (Poppins) é definida via $typography-font-family em
-// quasar.variables.scss. NÃO use o seletor universal `*` para trocar a fonte:
-// ele atinge também os <i> dos ícones (.material-icons, .mdi, ...) e faz o
-// nome do ícone aparecer por extenso (ex.: "inbox").
+.text-caption {
+  line-height: normal;
+}
+
+.text-tiny {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.03333em;
+}
+
+// Padrão de TODOS os inputs e selects (Quasar QField, variante outlined):
+// altura 40px, cantos arredondados 5px e fonte do tamanho do caption (12px).
+.q-field--outlined .q-field__control,
+.q-field--outlined .q-field__marginal {
+  height: 40px;
+  min-height: 40px;
+}
+
+.q-field--outlined .q-field__control {
+  border-radius: 5px;
+}
+
+.q-field__native,
+.q-field__input,
+.q-field__prefix,
+.q-field__suffix {
+  font-size: 12px;
+}

@@ -1,6 +1,6 @@
-export type ItemListaDrawer = {
-  icone: string
-  rotulo: string 
-  descricao: string 
-  para: string
+export type DrawerItemList = {
+  icon: string
+  label: string 
+  description: string 
+  to: string
 }
